@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Latar belakang cerah/putih keabuan */
+    font-family: 'Inter', sans-serif;
+    background: #f4f7f9; 
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Utama */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ======================================= */
+/* HEADER STYLES (JUDUL) */
+/* ======================================= */
+h2 {
+    text-align: center;
+    color: #212529;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    /* Aksen Biru */
+    background: linear-gradient(90deg, #007bff 0%, #0056b3 100%);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* ======================================= */
+/* LINK/NAVIGASI STYLES (Primary Blue) */
+/* ======================================= */
+a {
+    display: inline-block;
+    text-align: center;
+    padding: 12px 30px;
+    /* Gradien Biru Utama */
+    background: linear-gradient(135deg, #01a036 0%, #02cc7f 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px#01a036 (0, 123, 255, 0.3);
+    margin: 10px 5px;
+}
+
+a:hover {
+    background: linear-gradient(135deg,#01a036  0%,#01a036  100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px#01a036 (0, 123, 255, 0.5);
+}
+
+a:active {
+    transform: translateY(0);
+}
+
+.nav-links {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Tombol Kembali/Abu-abu */
+a.btn-back {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+a.btn-back:hover {
+    background: linear-gradient(135deg, #7d8590 0%, #6c757d 100%);
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+}
+
+/* ======================================= */
+/* FORM STYLES */
+/* ======================================= */
+form {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); 
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+/* Form Labels */
+label {
+    display: block;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #007bff; /* Biru Fokus */
+    background: white;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Select Dropdown */
+select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+/* Button Submit (Primary Blue) */
+button[type="submit"],
+input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    /* Gradien Biru Utama */
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+}
+
+/* Search Form */
+form.search-form {
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+form.search-form input[type="text"] {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+form.search-form button {
+    width: auto;
+    padding: 14px 40px;
+    margin-top: 0;
+    flex-shrink: 0;
+}
+
+
+/* ======================================= */
+/* TABLE STYLES */
+/* ======================================= */
+.table-wrapper {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+}
+
+table {
+    width: 100%;
+    background: white;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* Table Header (Solid Blue) */
+thead {
+    background: #007bff; 
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+th {
+    padding: 20px 12px;
+    text-align: center;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+    background: #007bff;
+}
+
+/* Table Body */
+td {
+    padding: 16px 12px;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+    color: #2d3436;
+    vertical-align: middle;
+    font-size: 0.9rem;
+}
+
+td:first-child {
+    font-weight: 600;
+    color: #007bff; /* Primary Blue for ID/First Column */
+}
+
+/* Zebra Striping */
+tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+tbody tr:hover {
+    /* Efek Hover Biru Muda */
+    background: #e6f7ff; 
+    transition: all 0.3s ease;
+    transform: scale(1.01);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.05);
+}
+
+/* Action Links dalam Table */
+td a {
+    padding: 8px 18px; 
+    font-size: 0.8rem;
+}
+
+/* Edit Button - Abu-abu */
+td a[href*="edit"] {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    box-shadow: 0 3px 10px rgba(108, 117, 125, 0.3);
+}
+
+td a[href*="edit"]:hover {
+    background: linear-gradient(135deg, #7d8590 0%, #6c757d 100%);
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
+}
+
+/* Delete Button - Merah (Danger) */
+td a[onclick*="confirm"],
+td a[onclick*="Hapus"] {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    box-shadow: 0 3px 10px rgba(220, 53, 69, 0.3);
+}
+
+td a[onclick*="confirm"]:hover,
+td a[onclick*="Hapus"]:hover {
+    background: linear-gradient(135deg, #e64555 0%, #dc3545 100%);
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+}
+
+/* Status Messages */
+.message {
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 600px;
+    font-weight: 600;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724 !important;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24 !important;
+    border: 1px solid #f5c6cb;
+}
+
+/* ======================================= */
+/* RESPONSIVE DESIGN */
+/* ======================================= */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    form {
+        padding: 25px 20px;
+    }
+    
+    .table-wrapper {
+        overflow-x: auto;
+        border-radius: 12px;
+    }
+    
+    table {
+        min-width: 900px;
+    }
+    
+    th, td {
+        padding: 12px 8px;
+        font-size: 0.8rem;
+    }
+    
+    td a {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+    
+    form.search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    form.search-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    form {
+        padding: 20px 15px;
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea {
+        font-size: 0.9rem;
+    }
+}
