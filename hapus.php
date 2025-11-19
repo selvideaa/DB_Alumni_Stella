@@ -1,21 +1,32 @@
 <?php
 include 'koneksi.php';
 
-// Pastikan ada parameter id
-if (isset($_GET['id'])) {
-    $id = intval($_GET['id']);
-
-    // Hapus data
-    mysqli_query($conn, "DELETE FROM alumni WHERE id_Alumni = $id");
-
-    // Menyusun ulang ID agar urut lagi dari 1
-    mysqli_query($conn, "SET @num := 0");
-    mysqli_query($conn, "UPDATE alumni SET id_Alumni = @num := @num + 1 ORDER BY id_Alumni");
+// Cek apakah ada parameter ID
+if(isset($_GET['id'])) {
+    $id = $_GET['id'];
     
-    // Reset auto increment agar lanjut dari ID terakhir
-    mysqli_query($conn, "ALTER TABLE alumni AUTO_INCREMENT = 1");
+    // Query untuk menghapus data
+    $query = "DELETE FROM alumni WHERE Id_alumni = '$id'";
+    
+    // Eksekusi query
+    if(mysqli_query($koneksi, $query)) {
+        // Jika berhasil
+        echo "<script>
+                alert('Data berhasil dihapus!');
+                window.location='index.php';
+              </script>";
+    } else {
+        // Jika gagal
+        echo "<script>
+                alert('Gagal menghapus data: " . mysqli_error($koneksi) . "');
+                window.location='index.php';
+              </script>";
+    }
+} else {
+    // Jika tidak ada ID
+    echo "<script>
+            alert('ID tidak ditemukan!');
+            window.location='index.php';
+          </script>";
 }
-
-// Kembali ke halaman utama
-header("Location: index.php");
-exit;
+?>
